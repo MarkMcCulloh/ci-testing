@@ -1,0 +1,15 @@
+name: CI
+
+on:
+  push:
+    branches: [ develop ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: MarkMcCulloh/action-get-pr-labels@main
+      id: prData
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
